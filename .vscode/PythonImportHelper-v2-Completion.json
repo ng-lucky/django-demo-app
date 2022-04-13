@@ -145,14 +145,6 @@
         "documentation": {}
     },
     {
-        "label": "TestModel",
-        "importPath": "main.models",
-        "description": "main.models",
-        "isExtraImport": true,
-        "detail": "main.models",
-        "documentation": {}
-    },
-    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -391,7 +383,7 @@
         "kind": 5,
         "importPath": "main.urls",
         "description": "main.urls",
-        "peekOfCode": "urlpatterns = [\n    path('', index, name='home'),\n    path('create_post/<str:post>/', create_post)\n]",
+        "peekOfCode": "urlpatterns = [\n   path('posts/', show_posts)\n]",
         "detail": "main.urls",
         "documentation": {}
     },
@@ -400,7 +392,7 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def index(request):\n    tests = TestModel.objects.all()\n    return render(request, 'index.html', {'tests': tests})\ndef create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"Post successfully created\")",
+        "peekOfCode": "def index(request):\n    tests = TestModel.objects.all()\n    return render(request, 'index.html', {'tests': tests})\ndef create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"<h1>Post successfully created</h1>\")\ndef show_posts(request):",
         "detail": "main.views",
         "documentation": {}
     },
@@ -409,7 +401,16 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"Post successfully created\")",
+        "peekOfCode": "def create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"<h1>Post successfully created</h1>\")\ndef show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "show_posts",
+        "kind": 2,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "def show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})",
         "detail": "main.views",
         "documentation": {}
     },

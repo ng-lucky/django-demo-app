@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from main.models import TestModel
+from .models import *
 
 # Create your views here.
 def index(request):
@@ -13,4 +13,9 @@ def create_post(request, post):
         name=post
     )
     test.save()
-    return HttpResponse("Post successfully created")
+    return HttpResponse("<h1>Post successfully created</h1>")
+
+
+def show_posts(request):
+    posts = Post.objects.all()
+    return render(request,"posts_list.html", {"posts_list": posts})
