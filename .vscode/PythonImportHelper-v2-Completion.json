@@ -383,7 +383,7 @@
         "kind": 5,
         "importPath": "main.urls",
         "description": "main.urls",
-        "peekOfCode": "urlpatterns = [\n   path('posts/', show_posts)\n]",
+        "peekOfCode": "urlpatterns = [\n   path('posts/', show_posts),\n   path('create_post/', create_new_post),\n   path('login/', login)\n]",
         "detail": "main.urls",
         "documentation": {}
     },
@@ -401,7 +401,7 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"<h1>Post successfully created</h1>\")\ndef show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})",
+        "peekOfCode": "def create_post(request, post):\n    test = TestModel.objects.create(\n        name=post\n    )\n    test.save()\n    return HttpResponse(\"<h1>Post successfully created</h1>\")\ndef show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})\ndef create_new_post(request):",
         "detail": "main.views",
         "documentation": {}
     },
@@ -410,7 +410,25 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})",
+        "peekOfCode": "def show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})\ndef create_new_post(request):\n    post = Post.objects.create(\n        title = \"My post tiltle\",\n        body = \"My new post body\",\n        photo_url = \"wwww.eagaloe1.com/photo.png\"\n    )\n    post.save()",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "create_new_post",
+        "kind": 2,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "def create_new_post(request):\n    post = Post.objects.create(\n        title = \"My post tiltle\",\n        body = \"My new post body\",\n        photo_url = \"wwww.eagaloe1.com/photo.png\"\n    )\n    post.save()\n    return HttpResponse(\"<h2>Post created </h2>\")\ndef login(request):\n    return render(request, \"login.html\")",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "def login(request):\n    return render(request, \"login.html\")",
         "detail": "main.views",
         "documentation": {}
     },

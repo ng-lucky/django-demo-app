@@ -19,3 +19,16 @@ def create_post(request, post):
 def show_posts(request):
     posts = Post.objects.all()
     return render(request,"posts_list.html", {"posts_list": posts})
+
+
+def create_new_post(request):
+    post = Post.objects.create(
+        title = "My post tiltle",
+        body = "My new post body",
+        photo_url = "wwww.eagaloe1.com/photo.png"
+    )
+    post.save()
+    return HttpResponse("<h2>Post created </h2>")
+
+def login(request):
+    return render(request, "login.html")
