@@ -1,0 +1,26 @@
+{% extends "base_layout.html" %}
+
+{% block main_content %}
+<h3>Create A Post</h3>
+<form action="/create_post/" method="post">
+    {% if message != ''%}
+    <div class="alert alert-success" role="alert">
+        {{message}}
+      </div>
+      {% endif %}
+{% csrf_token %}
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" id="exampleFormControlInput1" placeholder="">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Body</label>
+    <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="photo_url" class="form-label">Photo URL</label>
+    <input type="text" class="form-control" name="photo_url" id="photo_url" placeholder="">
+  </div>
+<button type="submit" class="btn btn-info">Submit</button>
+</form>
+{% endblock %}

@@ -105,6 +105,14 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
         "label": "models",
         "importPath": "django.db",
         "description": "django.db",
@@ -113,11 +121,52 @@
         "documentation": {}
     },
     {
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "django.db.models.deletion",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.db.models.deletion",
+        "description": "django.db.models.deletion",
+        "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
         "label": "AppConfig",
         "importPath": "django.apps",
         "description": "django.apps",
         "isExtraImport": true,
         "detail": "django.apps",
+        "documentation": {}
+    },
+    {
+        "label": "forms",
+        "importPath": "django",
+        "description": "django",
+        "isExtraImport": true,
+        "detail": "django",
         "documentation": {}
     },
     {
@@ -266,7 +315,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -275,7 +324,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -284,7 +333,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -293,7 +342,16 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "demo_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "demo_app.settings",
+        "description": "demo_app.settings",
+        "peekOfCode": "STATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -302,7 +360,16 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "detail": "demo_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "demo_app.settings",
+        "description": "demo_app.settings",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join('static'), )\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -352,6 +419,24 @@
         "documentation": {}
     },
     {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "main.migrations.0003_testmodel_message",
+        "description": "main.migrations.0003_testmodel_message",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('main', '0002_post'),\n    ]\n    operations = [\n        migrations.AddField(\n            model_name='testmodel',\n            name='message',\n            field=models.TextField(blank=True, null=True),\n        ),",
+        "detail": "main.migrations.0003_testmodel_message",
+        "documentation": {}
+    },
+    {
+        "label": "Migration",
+        "kind": 6,
+        "importPath": "main.migrations.0004_comment",
+        "description": "main.migrations.0004_comment",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        ('main', '0003_testmodel_message'),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Comment',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('comment', models.TextField()),",
+        "detail": "main.migrations.0004_comment",
+        "documentation": {}
+    },
+    {
         "label": "MainConfig",
         "kind": 6,
         "importPath": "main.apps",
@@ -361,11 +446,38 @@
         "documentation": {}
     },
     {
+        "label": "PostFormNew",
+        "kind": 6,
+        "importPath": "main.forms",
+        "description": "main.forms",
+        "peekOfCode": "class PostFormNew(forms.Form):\n    title = forms.CharField(max_length=250)\n    body = forms.CharField(widget=forms.Textarea)\n    photo_url = forms.CharField(max_length=2000)\nclass TestForm(forms.Form):\n    name = forms.CharField(max_length=100, label='Your name')\n    message = forms.CharField(widget=forms.Textarea)",
+        "detail": "main.forms",
+        "documentation": {}
+    },
+    {
+        "label": "TestForm",
+        "kind": 6,
+        "importPath": "main.forms",
+        "description": "main.forms",
+        "peekOfCode": "class TestForm(forms.Form):\n    name = forms.CharField(max_length=100, label='Your name')\n    message = forms.CharField(widget=forms.Textarea)",
+        "detail": "main.forms",
+        "documentation": {}
+    },
+    {
         "label": "Post",
         "kind": 6,
         "importPath": "main.models",
         "description": "main.models",
-        "peekOfCode": "class Post(models.Model):\n    title = models.CharField(max_length=250)\n    body = models.TextField()\n    photo_url = models.CharField(max_length=2000, default='', blank=True, null=True)\n    date_created = models.DateTimeField(auto_now_add = True)\nclass TestModel(models.Model):\n    name = models.CharField(max_length=100, null=True, blank=True)",
+        "peekOfCode": "class Post(models.Model):\n    title = models.CharField(max_length=250)\n    body = models.TextField()\n    photo_url = models.CharField(max_length=2000, default='', blank=True, null=True)\n    date_created = models.DateTimeField(auto_now_add = True)\nclass Comment(models.Model):\n    post = models.ForeignKey(Post, related_name=\"my_post\", on_delete=models.CASCADE)\n    comment = models.TextField()\n    date_created = models.DateTimeField(auto_now_add = True)\nclass TestModel(models.Model):",
+        "detail": "main.models",
+        "documentation": {}
+    },
+    {
+        "label": "Comment",
+        "kind": 6,
+        "importPath": "main.models",
+        "description": "main.models",
+        "peekOfCode": "class Comment(models.Model):\n    post = models.ForeignKey(Post, related_name=\"my_post\", on_delete=models.CASCADE)\n    comment = models.TextField()\n    date_created = models.DateTimeField(auto_now_add = True)\nclass TestModel(models.Model):\n    name = models.CharField(max_length=100, null=True, blank=True)\n    message = models.TextField(null=True, blank=True)",
         "detail": "main.models",
         "documentation": {}
     },
@@ -374,7 +486,7 @@
         "kind": 6,
         "importPath": "main.models",
         "description": "main.models",
-        "peekOfCode": "class TestModel(models.Model):\n    name = models.CharField(max_length=100, null=True, blank=True)",
+        "peekOfCode": "class TestModel(models.Model):\n    name = models.CharField(max_length=100, null=True, blank=True)\n    message = models.TextField(null=True, blank=True)",
         "detail": "main.models",
         "documentation": {}
     },
@@ -383,7 +495,7 @@
         "kind": 5,
         "importPath": "main.urls",
         "description": "main.urls",
-        "peekOfCode": "urlpatterns = [\n   path('posts/', show_posts),\n   path('create_post/', create_new_post),\n   path('login/', login)\n]",
+        "peekOfCode": "urlpatterns = [\n   path('posts/', show_posts),\n   path('create_post/', create_new_post),\n   path('login/', login),\n   path('test_form/', test_form)\n]",
         "detail": "main.urls",
         "documentation": {}
     },
@@ -410,7 +522,7 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})\ndef create_new_post(request):\n    post = Post.objects.create(\n        title = \"My post tiltle\",\n        body = \"My new post body\",\n        photo_url = \"wwww.eagaloe1.com/photo.png\"\n    )\n    post.save()",
+        "peekOfCode": "def show_posts(request):\n    posts = Post.objects.all()\n    return render(request,\"posts_list.html\", {\"posts_list\": posts})\ndef create_new_post(request):\n    form = PostFormNew()\n    message = ''\n    if request.method == 'POST':\n        form = PostFormNew(request.POST)\n        if form.is_valid:\n            print(form)",
         "detail": "main.views",
         "documentation": {}
     },
@@ -419,7 +531,7 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def create_new_post(request):\n    post = Post.objects.create(\n        title = \"My post tiltle\",\n        body = \"My new post body\",\n        photo_url = \"wwww.eagaloe1.com/photo.png\"\n    )\n    post.save()\n    return HttpResponse(\"<h2>Post created </h2>\")\ndef login(request):\n    return render(request, \"login.html\")",
+        "peekOfCode": "def create_new_post(request):\n    form = PostFormNew()\n    message = ''\n    if request.method == 'POST':\n        form = PostFormNew(request.POST)\n        if form.is_valid:\n            print(form)\n            title = form.cleaned_data[\"title\"]\n            body = form.cleaned_data[\"body\"]\n            photo_url = form.cleaned_data[\"photo_url\"]",
         "detail": "main.views",
         "documentation": {}
     },
@@ -428,7 +540,16 @@
         "kind": 2,
         "importPath": "main.views",
         "description": "main.views",
-        "peekOfCode": "def login(request):\n    return render(request, \"login.html\")",
+        "peekOfCode": "def login(request):\n    return render(request, \"login.html\")\ndef test_form(request):\n    form = TestForm()\n    reply = ''\n    if request.method == 'POST':\n        form = TestForm(request.POST)\n        if form.is_valid():\n            name = form.cleaned_data[\"name\"]\n            message = form.cleaned_data[\"message\"]",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "test_form",
+        "kind": 2,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "def test_form(request):\n    form = TestForm()\n    reply = ''\n    if request.method == 'POST':\n        form = TestForm(request.POST)\n        if form.is_valid():\n            name = form.cleaned_data[\"name\"]\n            message = form.cleaned_data[\"message\"]\n            testm = TestModel.objects.create(\n                name=name,",
         "detail": "main.views",
         "documentation": {}
     },
