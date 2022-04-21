@@ -324,7 +324,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -333,7 +333,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -342,7 +342,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -351,7 +351,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -360,7 +360,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "STATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True\n    SECURE_SSL_REDIRECT = False\n    SESSION_COOKIE_AGE = 60 * 60",
+        "peekOfCode": "STATIC_ROOT = ''\nSTATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -369,7 +369,7 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True\n    SECURE_SSL_REDIRECT = False\n    SESSION_COOKIE_AGE = 60 * 60\n    SECURE_CONTENT_TYPE_NOSNIFF = True",
+        "peekOfCode": "STATIC_URL = '/static/'\nSTATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()",
         "detail": "demo_app.settings",
         "documentation": {}
     },
@@ -378,7 +378,34 @@
         "kind": 5,
         "importPath": "demo_app.settings",
         "description": "demo_app.settings",
-        "peekOfCode": "STATICFILES_DIRS = (os.path.join('static'), )\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True\n    SECURE_SSL_REDIRECT = False\n    SESSION_COOKIE_AGE = 60 * 60\n    SECURE_CONTENT_TYPE_NOSNIFF = True\n    SECURE_BROWSER_XSS_FILTER = True",
+        "peekOfCode": "STATICFILES_DIRS = (os.path.join('static'), )\nSTATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False",
+        "detail": "demo_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "demo_app.settings",
+        "description": "demo_app.settings",
+        "peekOfCode": "STATIC_ROOT = BASE_DIR / 'staticfiles'\nSTATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True",
+        "detail": "demo_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATIC_ROOT",
+        "kind": 5,
+        "importPath": "demo_app.settings",
+        "description": "demo_app.settings",
+        "peekOfCode": "STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')\nSTATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True\n    SECURE_SSL_REDIRECT = False",
+        "detail": "demo_app.settings",
+        "documentation": {}
+    },
+    {
+        "label": "STATICFILES_DIRS",
+        "kind": 5,
+        "importPath": "demo_app.settings",
+        "description": "demo_app.settings",
+        "peekOfCode": "STATICFILES_DIRS = [\n    os.path.join(BASE_DIR, 'static'),\n]\n###### HEROKU CONFIGURATION STARTS HERE ###################\nif 'DATABASE_URL' in os.environ:\n    DATABASES['default'] = dj_database_url.config()\n    DEBUG = False\n    SESSION_EXPIRE_AT_BROWSER_CLOSE = True\n    SECURE_SSL_REDIRECT = False\n    SESSION_COOKIE_AGE = 60 * 60",
         "detail": "demo_app.settings",
         "documentation": {}
     },
