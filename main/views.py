@@ -1,5 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth import authenticate, login
+from rest_framework.views import APIView
+from rest_framework.decorators import api_view, permission_classes, action
+from rest_framework.response import Response
+from rest_framework.permissions import AllowAny, IsAuthenticated
+
 
 from .forms import *
 
@@ -60,3 +66,17 @@ def test_form(request):
             testm.save()
             reply = 'Message sent successfully'
     return render(request, "test.html", {"form": form, "reply": reply})
+
+
+class PostAPIView(APIView):
+    def get(self, request):
+        return Response({"first_name": "lucky"})
+
+
+
+class Posts1APIView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request, format=None):
+        posts = [post.title for post in Post.objects.all()]
+        return Response(posts)

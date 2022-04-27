@@ -6,6 +6,6 @@ urlpatterns = [
    path('posts/', show_posts),
    path('create_post/', create_new_post),
    path('login/', login),
-   path('test_form/', test_form)
-   
+   path('test_form/', test_form),
+   path('api/posts/', PostAPIView.as_view()),
 ]
