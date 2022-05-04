@@ -203,6 +203,86 @@
         "documentation": {}
     },
     {
+        "label": "authenticate",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "django.contrib.auth",
+        "description": "django.contrib.auth",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "api_view",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "permission_classes",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "action",
+        "importPath": "rest_framework.decorators",
+        "description": "rest_framework.decorators",
+        "isExtraImport": true,
+        "detail": "rest_framework.decorators",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "AllowAny",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
         "label": "sys",
         "kind": 6,
         "isExtraImport": true,
@@ -513,8 +593,35 @@
         "kind": 5,
         "importPath": "main.urls",
         "description": "main.urls",
-        "peekOfCode": "urlpatterns = [\n   path('', show_posts),\n   path('posts/', show_posts),\n   path('create_post/', create_new_post),\n   path('login/', login),\n   path('test_form/', test_form)\n]",
+        "peekOfCode": "urlpatterns = [\n   path('', show_posts),\n   path('posts/', show_posts),\n   path('create_post/', create_new_post),\n   path('login/', login),\n   path('test_form/', test_form),\n   path('api/posts/', PostAPIView.as_view()),\n]",
         "detail": "main.urls",
+        "documentation": {}
+    },
+    {
+        "label": "PostAPIView",
+        "kind": 6,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "class PostAPIView(APIView):\n    def get(self, request):\n        posts = [post.title for post in Post.objects.all()]\n        # for post in Post.objects.all():\n        #     posts.append(post.title)\n        return Response(posts)\n    def post(self, request):\n        title = request.data.get(\"title\")\n        body = request.data.get(\"body\")\n        photo_url = request.data.get(\"photo_url\")",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "PostViewSet",
+        "kind": 6,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "class PostViewSet(viewsets.ModelViewSet):\n    @action(methods=[\"POST\"])\n    def create_post(self, request):\n        pass\nclass Posts1APIView(APIView):\n    permission_classes = [AllowAny]\n    def get(self, request, format=None):\n        posts = [post.title for post in Post.objects.all()]\n        return Response(posts)",
+        "detail": "main.views",
+        "documentation": {}
+    },
+    {
+        "label": "Posts1APIView",
+        "kind": 6,
+        "importPath": "main.views",
+        "description": "main.views",
+        "peekOfCode": "class Posts1APIView(APIView):\n    permission_classes = [AllowAny]\n    def get(self, request, format=None):\n        posts = [post.title for post in Post.objects.all()]\n        return Response(posts)",
+        "detail": "main.views",
         "documentation": {}
     },
     {

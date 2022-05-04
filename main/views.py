@@ -2,9 +2,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from rest_framework.views import APIView
+from rest_framework import viewsets
 from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from .serializers import *
 
 
 from .forms import *
@@ -70,13 +72,43 @@ def test_form(request):
 
 class PostAPIView(APIView):
     def get(self, request):
-        return Response({"first_name": "lucky"})
-
-
-
-class Posts1APIView(APIView):
-    permission_classes = [AllowAny]
-
-    def get(self, request, format=None):
+        
         posts = [post.title for post in Post.objects.all()]
+        # for post in Post.objects.all():
+        #     posts.append(post.title)
+            
         return Response(posts)
+    
+    def post(self, request):
+        title = request.data.get("title")
+        body = request.data.get("body")
+        photo_url = request.data.get("photo_url")
+        post = Post.objects.create(
+            title = title,
+            body=body,
+            photo_url=photo_url
+        )
+        post.save()
+        return Response({"message": "Post succesfully created", "status": True}, status=201)
+
+class PostViewSet(viewsets.ModelViewSet):
+    @action(methods=["POST"], detail=False)
+    def create_post(self, request):
+        title = request.data.get("title")
+        body = request.data.get("body")
+        photo_url = request.data.get("photo_url")
+        post = Post.objects.create(
+            title = title,
+            body=body,
+            photo_url=photo_url
+        )
+        post.save()
+        return Response({"message": "Post succesfully created", "status": True}, status=201)
+    @action(methods=["POST"], detail=False)
+    def filter_post(self, request):
+        search_text = request.data.get("search_text")
+        queryset = Post.objects.all()
+        if search_text and search_text != '':
+            queryset = queryset.filter(title__contains=search_text)
+        serializer = PostSerializer(instance=queryset, many=True)
+        return Response({"result": serializer.data})

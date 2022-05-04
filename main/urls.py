@@ -1,5 +1,11 @@
+from django.conf.urls import include
 from django.urls import path
 from .views import *
+from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+router.register(r'posts', PostViewSet, basename='posts')
 
 urlpatterns = [
    path('', show_posts),
@@ -8,4 +14,5 @@ urlpatterns = [
    path('login/', login),
    path('test_form/', test_form),
    path('api/posts/', PostAPIView.as_view()),
+   path('api/', include(router.urls)),
 ]
