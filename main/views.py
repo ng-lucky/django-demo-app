@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
+from demo_app.pagination import ResultsPagination
 from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.decorators import api_view, permission_classes, action
@@ -92,6 +93,7 @@ class PostAPIView(APIView):
         return Response({"message": "Post succesfully created", "status": True}, status=201)
 
 class PostViewSet(viewsets.ModelViewSet):
+
     @action(methods=["POST"], detail=False)
     def create_post(self, request):
         title = request.data.get("title")
@@ -107,8 +109,14 @@ class PostViewSet(viewsets.ModelViewSet):
     @action(methods=["POST"], detail=False)
     def filter_post(self, request):
         search_text = request.data.get("search_text")
+        paginator = ResultsPagination()
+        
+        
         queryset = Post.objects.all()
         if search_text and search_text != '':
             queryset = queryset.filter(title__contains=search_text)
-        serializer = PostSerializer(instance=queryset, many=True)
-        return Response({"result": serializer.data})
+        
+        paginated_result = paginator.paginate_queryset(queryset, request)
+        serializer = PostSerializer(paginated_result, many=True)
+        
+        return paginator.get_paginated_response(serializer.data)
