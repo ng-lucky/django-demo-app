@@ -1,0 +1,16 @@
+ 'rest_framework.authtoken'
+
+  'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+
+
+
+from rest_framework.permissions import AllowAny, IsAuthenticated
+     permission_classes = [AllowAny]
+
+     permission_classes = (AllowAny,)

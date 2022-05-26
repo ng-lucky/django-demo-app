@@ -106,7 +106,7 @@ class PostViewSet(viewsets.ModelViewSet):
         )
         post.save()
         return Response({"message": "Post succesfully created", "status": True}, status=201)
-    @action(methods=["POST"], detail=False)
+    @action(methods=["POST"], detail=False,permission_classes=[AllowAny])
     def filter_post(self, request):
         search_text = request.data.get("search_text")
         paginator = ResultsPagination()
